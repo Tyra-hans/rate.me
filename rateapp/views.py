@@ -11,5 +11,5 @@ from django.contrib.auth.models import User
 # from .serializers import PersonSerializer ,ProjectSerializer, RatingSerializer
 
 
-# def Home(request):
-#     return render(request,'registration/registration-form.html')
+def Home(request):
+    return render(request,'all-posts/home.html')
