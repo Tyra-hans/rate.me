@@ -21,5 +21,8 @@ def home(request):
     }
     return render(request, 'all-posts/home.html', context)
 
-def profile(request):
-    return render(request,'all-posts/profile.html')
+def profile(request, username):
+    user = User.objects.get(username = username)
+    profile = Profile.objects.get(user = user)
+    projects = Project.objects.filter(author = user)
+    return render(request, 'all-posts/profile.html', {'profile': profile, 'projects': projects})

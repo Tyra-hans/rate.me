@@ -6,7 +6,7 @@ from django.conf import settings
 urlpatterns=[
    url('^$', views.landing,name='landing'),
    url('^home/$', views.home, name='home'),
-   url('^profile/$', views.profile, name='profile'),
+   url(r'^profile/(?P<username>\w{0,50})/$', views.profile, name='profile'),
      
 ]
 if settings.DEBUG:

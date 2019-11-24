@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'rateapp',
     'vote',
+    'star_ratings'
     
 ]
 
