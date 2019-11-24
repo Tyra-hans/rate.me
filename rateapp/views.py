@@ -20,3 +20,6 @@ def home(request):
         
     }
     return render(request, 'all-posts/home.html', context)
+
+def profile(request):
+    return render(request,'all-posts/profile.html')
