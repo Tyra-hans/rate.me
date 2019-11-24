@@ -13,3 +13,10 @@ from .models import Profile, Project
 
 def landing(request):
     return render(request,'all-posts/landing.html')
+
+def home(request):
+    context = {
+        'projects': Project.objects.all(),
+        
+    }
+    return render(request, 'all-posts/home.html', context)
