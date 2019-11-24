@@ -7,9 +7,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
-# from .models import Person,Profile, Project , Rating 
-# from .serializers import PersonSerializer ,ProjectSerializer, RatingSerializer
+from .models import Profile, Project  
+# from .serializers import PersonSerializer ,ProjectSerializer
 
 
-def Home(request):
-    return render(request,'all-posts/home.html')
+def landing(request):
+    return render(request,'all-posts/landing.html')
