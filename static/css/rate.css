@@ -39,7 +39,9 @@ body{
     border-right: 4px solid orange;
   
 }
-
+.project{
+    display: flex;
+}
 
 
 @keyframes typing {

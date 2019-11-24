@@ -6,49 +6,33 @@
 
 
     {% for project in projects %}
-   
-   
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                    <article class="">
-                            <div class="">
-                            <div class="">
-                                <div class="row post">
-                                    <div class="col-sm-12 col-md-7 col-lg-6 ">
-                                            <div class="card ">
-                                                <div class="nameavatar">
-                                                       <img src="{{project_pic.image.url}}" alt="Avatar" class="avatar ml-2 mr-2 mt-2"> 
-                                                        <a class="mr-2 mt-4" href="#">{{ project.author }}</a>
-                                                            
-                
-                                                </div>
-                                                   
-                                                    <hr>
-                                                    <small class="text-muted post1">{{ post.date_posted}}</small>
-                                                  
-                                                 
-                                                
-                                            
-
-                                                    
-                                                    
-                                            </div>
-                                    </div>
-                                        
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                        <div class="card mb-3 mt-3 project">
+                                <h3 class="card-header">{{project.title}}</h3>
+                                <img style="height: 200px; width: 100%; display: block;" src="{{project.project_pic.url}}" alt="Card image">
+                                <div class="card-body">
+                                  <p class="card-text">{{project.description}}</p>
+                                  <p class="card-text text-muted">by {{project.author}}</p>
                                 </div>
-                                
-                            </div>
-                            </div>
-                        </article>
+                              
+                              
+                                <div class="card-footer text-muted">
+                                    {{project.date_posted}}
+                                </div>
+                              </div>
+                </div>
+                   
+            </div>
+            
+        </div>
+        
+     
+    </div>
     
 
-            </div>
-                
-        </div>
-            
-
-    </div>
         
     {% endfor %}
  
