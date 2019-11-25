@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
 from .models import Profile, Project  
-from .forms import UploadProjectForm
+from .forms import UploadProjectForm , UpdateProfileForm
 # from .serializers import PersonSerializer ,ProjectSerializer
 
 
@@ -50,3 +50,37 @@ def create_post(request):
         form = UploadProjectForm()
 
     return render(request, 'all-posts/create_post.html', {'form': form})
+
+# @login_required(login_url = '/accounts/login/')
+# def update_profile(request, id):
+#     if request.method == 'POST':
+#         profile = Profile.objects.get(id = id)
+#         form = UpdateProfileForm(request.POST or None, request.FILES or None, instance = profile)
+#         if form.is_valid():
+#             edit = form.save(commit=False)
+#             edit.save()
+#             return redirect('all-posts/profile', username = request.user)
+#     else:
+#         form = UpdateProfileForm()
+
+#     return render(request, 'all-posts/update_profile.html', {'form': form})
+
+@login_required(login_url='/accounts/login')
+def update_profile(request):
+    
+    my_prof = Profile.objects.get(user=request.user)
+    form = UpdateProfileForm(instance=request.user)
+    
+    
+    if request.method == 'POST':
+        updateProf = UpdateProfileForm(request.POST,request.FILES,instance=request.user.profile)
+        if updateProf.is_valid():
+            updateProf.save()
+            
+            
+        return redirect('home')
+    else:
+        form = UpdateProfileForm(instance=request.user.profile)
+    
+      
+    return render(request, 'all-posts/update_profile.html', {'form': form})
