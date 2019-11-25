@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
 from .models import Profile, Project  
+from .forms import UploadProjectForm
 # from .serializers import PersonSerializer ,ProjectSerializer
 
 
@@ -35,3 +36,17 @@ def search(request):
         return render(request, 'all-posts/search.html', {'projects': projects, 'message': message})
         
     return render(request, 'all-posts/search.html')
+
+@login_required(login_url='/accounts/login/')
+def create_post(request):
+    if request.method == 'POST':
+        form = UploadProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.user = request.user
+            project.save()
+        return redirect('landing')
+    else:
+        form = UploadProjectForm()
+
+    return render(request, 'all-posts/create_post.html', {'form': form})
