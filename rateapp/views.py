@@ -51,19 +51,6 @@ def create_post(request):
 
     return render(request, 'all-posts/create_post.html', {'form': form})
 
-# @login_required(login_url = '/accounts/login/')
-# def update_profile(request, id):
-#     if request.method == 'POST':
-#         profile = Profile.objects.get(id = id)
-#         form = UpdateProfileForm(request.POST or None, request.FILES or None, instance = profile)
-#         if form.is_valid():
-#             edit = form.save(commit=False)
-#             edit.save()
-#             return redirect('all-posts/profile', username = request.user)
-#     else:
-#         form = UpdateProfileForm()
-
-#     return render(request, 'all-posts/update_profile.html', {'form': form})
 
 @login_required(login_url='/accounts/login')
 def update_profile(request):
