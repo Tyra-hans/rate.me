@@ -27,7 +27,7 @@ body{
 }
 
 
-/* .text {
+ .text {
     display: inline-block;
   	overflow: hidden;
   	letter-spacing: 2px;
@@ -40,10 +40,10 @@ body{
 }
 .project{
     display: flex;
-} */
+} 
 
 
-/* @keyframes typing {
+ @keyframes typing {
     from { 
         width: 0% 
     }
@@ -59,4 +59,4 @@ body{
     50% { 
         border-color: orange; 
     }
-} */
+} 
