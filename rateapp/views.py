@@ -58,7 +58,7 @@ def project(request, id):
         return redirect('project', id)
     else:
         form = ReviewForm()
-    return render(request, 'project.html', {'project': project, 'reviews': reviews, 'form': form, 'design': design, 'usability': usability, 'content': content, 'average': average})
+    return render(request, 'all-posts/s_project.html', {'project': project, 'reviews': reviews, 'form': form, 'design': design, 'usability': usability, 'content': content, 'average': average})
 
 
 
