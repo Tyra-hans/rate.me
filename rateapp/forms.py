@@ -1,5 +1,5 @@
 from django import forms
-from .models import Project,Profile
+from .models import Project,Profile, Review
 
 
 class UploadProjectForm(forms.ModelForm):
@@ -16,3 +16,8 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         exclude = ['user']
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        exclude = ['average','project', 'user']
