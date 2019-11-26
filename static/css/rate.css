@@ -41,6 +41,9 @@ body{
 .project{
     display: flex;
 } 
+.sign{
+    font-family: 'Source Code Pro', monospace;
+}
 
 
  @keyframes typing {

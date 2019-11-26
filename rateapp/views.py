@@ -71,7 +71,7 @@ def create_post(request):
             project = form.save(commit=False)
             project.user = request.user
             project.save()
-        return redirect('landing')
+        return redirect('home')
     else:
         form = UploadProjectForm()
 
