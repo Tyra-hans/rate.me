@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from .models import Profile, Project , Review  
 from .forms import UploadProjectForm , UpdateProfileForm ,ReviewForm
 from django.db.models import Avg
+from django.http import JsonResponse
 # from .serializers import PersonSerializer ,ProjectSerializer
 
 

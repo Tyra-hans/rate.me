@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Project, Profile
+from .models import Project, Profile , Review
 
 class ProjectTestClass(TestCase):
 
@@ -11,13 +11,26 @@ class ProjectTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.project1,Project))
 
-       # Testing Save Method
-    def test_save_method(self):
-        self.save_project()
-        projects = Project.objects.all()
-        self.assertTrue(len(projects) > 0)
+ 
 
-        # Testing String representation Method
+    # Testing String representation Method
     def test_string_representation(self):
         project = Project(title="sometext")
         self.assertEqual(str(project), 'sometext')
+
+class ProfileTestClass(TestCase):
+
+    # Set up method
+    def setUp(self):
+        self.prof= Profile(bio = 'Titl1', prof_pic = 'profpic.png' )
+
+    # Testing  instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.prof,Profile))
+
+ 
+
+    # Testing String representation Method
+    def test_string_representation(self):
+        profile = Profile(bio="sometext")
+        self.assertEqual(str(profile), 'sometext')

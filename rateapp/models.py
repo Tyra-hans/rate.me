@@ -3,6 +3,7 @@ from vote.models import VoteModel
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from phone_field import PhoneFie
 
 
 
@@ -30,9 +31,10 @@ class Project(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User)
-    bio = models.TextField(blank=True)
+    bio = models.TextField(blank=True ,null=True)
+    contact = PhoneField(blank=True, help_text='Contact phone number' , default=None)
 
-    prof_pic = models.ImageField(upload_to="prof_pics/")
+    prof_pic = models.ImageField(upload_to="prof_pics/" , default='/prof_pics/default.png', null=True)
 
     def save_profile(self):
         self.save()
