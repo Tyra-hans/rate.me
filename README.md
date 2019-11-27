@@ -23,9 +23,9 @@ No known bugs.
 | log out           |click                 |logs out user                |
 
 ## API endpoints
-* [Profile api](http://127.0.0.1:8000/profiles/)
-* [Users api](http://127.0.0.1:8000/users/)
-* [Project api](http://127.0.0.1:8000/projects/)
+* [Profile api](https://rat3me.herokuapp.com/profiles/)
+* [Users api](https://rat3me.herokuapp.com/users/)
+* [Project api](https://rat3me.herokuapp.com/projects/)
 
 ## Technologies
 * Django
