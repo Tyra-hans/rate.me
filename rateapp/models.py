@@ -33,7 +33,6 @@ class Profile(models.Model):
     user = models.OneToOneField(User)
     bio = models.TextField(blank=True ,null=True)
     contact = models.TextField(blank=True, help_text='Contact phone number' , default=None, null=True)
-
     prof_pic = models.ImageField(upload_to="prof_pics/" , default='/prof_pics/default.png', null=True)
 
     def save_profile(self):

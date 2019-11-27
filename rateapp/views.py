@@ -11,7 +11,9 @@ from .models import Profile, Project , Review
 from .forms import UploadProjectForm , UpdateProfileForm ,ReviewForm
 from django.db.models import Avg
 from django.http import JsonResponse
-# from .serializers import PersonSerializer ,ProjectSerializer
+from rateapp.serializers import UserSerializer ,ProjectSerializer , ProfileSerializer
+from rest_framework import viewsets
+# from .permissions import IsAdminOrReadOnly
 
 
 def landing(request):
@@ -98,3 +100,31 @@ def update_profile(request):
     
       
     return render(request, 'all-posts/update_profile.html', {'form': form})
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to ve viewed or edited 
+    """
+    
+    queryset = User.objects.all().order_by('date_joined')
+    serializer_class = UserSerializer
+    # permission_classes = (IsAdminOrReadOnly)
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows projects to be viewed or edited
+    """
+    
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    # permission_classes = (IsAdminOrReadOnly)
+
+class ProfileViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows projects to be viewed or edited
+    """
+    
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+    # permission_classes = (IsAdminOrReadOnly)
