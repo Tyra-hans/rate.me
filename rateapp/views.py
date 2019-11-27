@@ -17,6 +17,7 @@ from django.http import JsonResponse
 def landing(request):
     return render(request,'all-posts/landing.html')
 
+@login_required(login_url='/accounts/login/')
 def home(request):
     context = {
         'projects': Project.objects.all(),

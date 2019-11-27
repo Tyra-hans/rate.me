@@ -13,13 +13,13 @@
                 <div class="col-md-3 col-lg-3 col-sm-12">
                         <div class="card mb-3 mt-3 project" style="height: fit-content;">
                                 <a href="{% url 'project' project.id %}">
-                                <h3 class="card-header">{{project.title}}</h3>
+                                <h3 class="card-header sign">{{project.title}}</h3>
                                 <img style="height: 200px; width: 100%; display: block;" src="{{project.project_pic.url}}" alt="Card image">
                                 <div class="card-body">
-                                  <p class="card-text">{{project.description}}</p>
-                                  <p class="card-text text-muted">by {{project.author}}</p>
+                                  <p class="card-text sign">{{project.description}}</p>
+                                  <p class="card-text text-muted sign">by {{project.author}}</p>
                                 </div>
-                                <div class="card-footer text-muted">
+                                <div class="card-footer text-muted sign">
                                     {{project.date_posted}}
                                 </div>
                               </div>

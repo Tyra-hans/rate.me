@@ -8,40 +8,36 @@
         <div class="span3 well mt-5">
             <center>
             <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="{{profile.prof_pic.url}}" name="aboutme" width="140" height="140" class="img-circle"></a>
-            <h3>{{profile.user}}</h3>
-            <em>click my face for more</em>
+            <h3 class="sign"style="color: green;">{{profile.user}}</h3>
+            <em class="sign" style="color: blue;">click my face for more</em>
             </center>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog" >
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                        <h4 class="modal-title" id="myModalLabel">More About {{profile.user}}</h4>
+                        <h4 class="modal-title sign" style="color: blue;" id="myModalLabel sign">More About {{profile.user}}</h4>
                         </div>
                     <div class="modal-body">
                         <center>
                         <img src="{{profile.prof_pic.url}}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-                        <h3 class="media-heading">{{profile.user}}</h3>
-                        <span><strong>Skills: </strong></span>
-                            <span class="label label-warning">HTML5/CSS</span>
-                            <span class="label label-info">Adobe CS 5.5</span>
-                            <span class="label label-info">Microsoft Office</span>
-                            <span class="label label-success">Windows XP, Vista, 7</span>
+                        <h3 class="media-heading sign" style="color: green;">{{profile.user}}</h3>
+                       
                         </center>
                         <hr>
                         <center>
-                        <p class="text-left"><strong>Bio: </strong><br>
+                        <p class="text-left sign" style="color: orangered;"><strong>Bio: </strong><br>
                             {{profile.bio}}</p>
-                            <p class="text-left"><strong>Contact: </strong><br>
+                            <p class="text-left sign" style="color: blue;"><strong>Contact: </strong><br>
                                 {{profile.contact}}</p>
                         <br>
                         </center>
                     </div>
                     <div class="modal-footer">
                         <center>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about {{profile.user}}</button>
+                        <button type="button" class="btn btn-outline info sign" data-dismiss="modal">I've heard enough about {{profile.user}}</button>
                         <!-- <a href="{%url 'update_profile'  %}"><button type="button" class="btn btn-default" data-dismiss="modal">Update profile</button></a>  -->
                         </center>
                     </div>
