@@ -23,9 +23,9 @@ No known bugs.
 | log out           |click                 |logs out user                |
 
 ## API endpoints
-[Profile](http://127.0.0.1:8000/profiles/)
-[Users](http://127.0.0.1:8000/users/)
-[Project](http://127.0.0.1:8000/projects/)
+* [Profile api](http://127.0.0.1:8000/profiles/)
+* [Users api](http://127.0.0.1:8000/users/)
+* [Project api](http://127.0.0.1:8000/projects/)
 
 ## Technologies
 * Django
